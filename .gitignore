@@ -1,0 +1,14 @@
+# Ignore virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# Ignore environment files and secrets
+.env
+
+# Ignore data files
+*.csv
+*.xlsx
+
+# VS Code settings
+.vscode/

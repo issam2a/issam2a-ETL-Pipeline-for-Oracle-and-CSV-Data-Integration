@@ -21,7 +21,7 @@ This project demonstrates an **ETL (Extract, Transform, Load)** pipeline that in
 
 - **Python 3.10+**
 - **Pandas** for data manipulation
-- **cx_Oracle** for Oracle DB integration
+- **Oracledb** for Oracle DB integration
 - **Oracle 19c** (local or remote)
 - **CSV** for flat file ingestion
 - **Virtual Environment** for isolation
@@ -51,14 +51,13 @@ ETL Pipeline for Oracle and CSV Data Integration/
 - Load customer data from CSV using `pandas.read_csv()`
 
 ### 🔄 2. Transform
-- Drop unnamed/index columns
 - Clean column names and ensure consistency
 - Convert numeric fields (`monthlycharges`, `totalcharges`) to `float`
 - Replace `NaN` with `None` to match Oracle’s `NULL`
 - Drop rows with missing `customerID`
 
 ### 📤 3. Load
-- Use `cx_Oracle` and `executemany()` to insert cleaned data into Oracle
+- Use `Oracledb` and `executemany()` to insert cleaned data into Oracle
 - Ensure data type compatibility with Oracle column definitions
 
 ---
@@ -80,9 +79,7 @@ git clone https://github.com/issam2a/issam2a-ETL-Pipeline-for-Oracle-and-CSV-Dat
 cd ETL Pipeline for Oracle and CSV Data Integration
 
 2. Set Up Virtual Environment
-bash
-Copy
-Edit
+
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
